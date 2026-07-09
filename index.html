@@ -27,6 +27,13 @@ nav a:hover{color:var(--ember)}
 .hero{display:grid;grid-template-columns:1.35fr 1fr;gap:0;align-items:stretch;width:100vw;margin-left:calc(50% - 50vw);min-height:calc((100vh - 113px) * 0.4)}
 .hero-art{background:var(--ink);position:relative;min-height:150px;overflow:hidden}
 .hero-svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-msgs{position:absolute;inset:0;pointer-events:none;z-index:2}
+.hero-msg{position:absolute;left:44px;right:44px;bottom:28px;font-size:clamp(22px,2.3vw,36px);font-weight:600;line-height:1.14;letter-spacing:.2px;opacity:0;animation:heroFade 10s ease-in-out infinite}
+.hero-msg.m2{animation-delay:5s}
+.hero-msg .g{color:#F3C46E}
+.hero-msg .h{color:#FCE7B4;font-weight:700}
+@keyframes heroFade{0%{opacity:0}4%{opacity:1}46%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.hero-msg{animation:none}.hero-msg.m1{opacity:1}}
 .hero-panel{padding:6px 34px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:4px;background:#F6EDD6}
 .hero-panel h1{font-size:30px;font-weight:600;letter-spacing:.3px;color:#17182c;margin-top:40px}
 .hero-panel .intro{font-size:15px;color:#5a5540;max-width:36ch;margin:3px auto 8px;text-wrap:pretty}
@@ -240,6 +247,10 @@ footer .tag{color:var(--ember)}
 <circle cx="900" cy="285" r="12" fill="none" stroke="#FCE7B4" stroke-width="1.5" opacity="0.6"><animate attributeName="r" dur="4s" repeatCount="indefinite" values="12;120;120" keyTimes="0;0.8;1"/><animate attributeName="opacity" dur="4s" repeatCount="indefinite" values="0.7;0;0" keyTimes="0;0.8;1"/></circle>
 <text x="62" y="505" font-family="'Helvetica Neue',Arial,sans-serif" font-size="56" letter-spacing="1"><tspan font-weight="400" fill="#F3C46E">Not artificial. </tspan><tspan font-weight="700" fill="#FCE7B4">Awake.</tspan></text>
 </svg>
+    <div class="hero-msgs">
+      <div class="hero-msg m1"><span class="g">Not artificial. </span><span class="h">Awake.</span></div>
+      <div class="hero-msg m2"><span class="g">Stop running tools. </span><span class="h">Start getting outcomes.</span></div>
+    </div>
   </div>
   <div class="hero-panel">
     <h1>Meet Ab&euml;.</h1>
