@@ -3,176 +3,183 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bravetto — AI Website Competitive Analysis</title>
+<title>Bravetto — The AI Website Field Map</title>
 <style>
 :root{
-  --ink:#0C0F28; --gold:#C6902F; --gold-soft:#F3C46E; --ember:#F2A63C;
-  --page:#FEFDF8; --panel:#F6EDD6; --text:#1b1c30; --muted:#6a6552; --line:#e6ddc9;
-  --sans:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
-  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --ground:#E7E9ED; --panel:#F3F4F6; --ink:#12172A; --slate:#8A93A6; --slate-d:#5A6274;
+  --ember:#E8912E; --gold:#F4B44E; --hot:#FBE3B0; --line:#cfd3da;
+  --sans:"Helvetica Neue",Helvetica,Arial,sans-serif; --mono:"SFMono-Regular",Menlo,Consolas,monospace;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--sans);color:var(--text);background:var(--page);line-height:1.6;-webkit-font-smoothing:antialiased}
-.wrap{max-width:900px;margin:0 auto;padding:0 28px}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html{background:var(--ground)}
+body{font-family:var(--sans);color:var(--ink);background:var(--ground);line-height:1.4;-webkit-font-smoothing:antialiased}
+.sheet{max-width:1000px;margin:0 auto;background:var(--ground);padding:0 0 60px}
+.lab{font-family:var(--mono);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--slate-d)}
+.pad{padding-left:44px;padding-right:44px}
 
-header.top{background:var(--ink);color:#f4f2ee;padding:64px 0 56px;text-align:center}
-header.top .eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
-header.top h1{font-family:var(--serif);font-weight:600;font-size:44px;line-height:1.12;letter-spacing:.2px;color:#fff;max-width:16ch;margin:0 auto}
-header.top p.sub{color:#b9bcd6;font-size:18px;margin:18px auto 0;max-width:52ch}
+/* masthead */
+.mast{display:grid;grid-template-columns:1fr auto;align-items:end;gap:20px;padding:40px 44px 22px;border-bottom:3px solid var(--ink)}
+.mast h1{font-size:52px;line-height:.98;font-weight:800;letter-spacing:-1.4px;text-transform:uppercase}
+.mast h1 em{font-style:normal;color:var(--ember)}
+.mast .meta{text-align:right;color:var(--slate-d);font-family:var(--mono);font-size:11px;letter-spacing:1px;line-height:1.7}
+.mast .meta b{color:var(--ink)}
 
-section{padding:52px 0;border-bottom:1px solid var(--line)}
-h2{font-family:var(--serif);font-weight:600;font-size:30px;color:var(--ink);margin-bottom:6px;letter-spacing:.2px}
-h2 + .lede{color:var(--muted);font-size:18px;margin-bottom:26px;max-width:60ch}
-h3{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);margin-bottom:4px}
-p{margin-bottom:14px;max-width:66ch}
-.rule{width:54px;height:3px;background:var(--gold);margin:0 0 22px;border-radius:2px}
+/* thesis + stat */
+.thesis{display:grid;grid-template-columns:1fr 250px;gap:0;border-bottom:1px solid var(--line)}
+.thesis .t{padding:26px 44px 30px;border-right:1px solid var(--line)}
+.thesis .t p{font-size:23px;font-weight:500;letter-spacing:-.3px;max-width:34ch}
+.thesis .t p b{background:var(--ink);color:var(--ground);padding:0 6px}
+.thesis .t p .warm{background:var(--ember);color:var(--ink);padding:0 6px}
+.stat{padding:24px 30px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.stat .n{font-size:74px;font-weight:800;letter-spacing:-3px;line-height:.9;font-variant-numeric:tabular-nums}
+.stat .n .s{color:var(--slate)}
+.stat .cap{font-family:var(--mono);font-size:11px;letter-spacing:1px;color:var(--slate-d);text-transform:uppercase;max-width:22ch;margin-top:8px}
 
-ul.clean{list-style:none;display:flex;flex-direction:column;gap:12px;margin:8px 0 0}
-ul.clean li{padding-left:22px;position:relative;max-width:66ch}
-ul.clean li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:8px;background:var(--ember);border-radius:50%}
+/* section header */
+.sec{padding-top:34px}
+.sec > .lab{display:block;padding:0 44px 12px}
+.sec h2{font-size:15px}
 
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
-.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 22px 20px}
-.card .q{font-family:var(--serif);font-style:italic;color:var(--ink);font-size:17px;margin-bottom:10px}
-.card .meta{font-size:15px;color:var(--text)}
-.card .tag{display:inline-block;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);border-radius:20px;padding:3px 10px;margin-bottom:12px}
+/* map */
+.mapwrap{padding:6px 30px 34px}
+svg.map{width:100%;height:auto;display:block}
 
-.tablewrap{overflow-x:auto;margin-top:10px}
-table{border-collapse:collapse;width:100%;font-size:15px;min-width:560px}
-th,td{text-align:left;padding:12px 14px;vertical-align:top;border-bottom:1px solid var(--line)}
-th{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:600}
-td.dim{color:var(--muted)}
-td strong{color:var(--ink)}
-tbody tr:last-child td{border-bottom:none}
+/* grounds proof */
+.grounds{padding:6px 44px 40px;border-top:1px solid var(--line)}
+.grid-g{display:grid;grid-template-columns:repeat(8,1fr);gap:10px;margin-top:14px}
+.g{display:flex;flex-direction:column;gap:6px}
+.g .sw{height:78px;border:1px solid var(--line)}
+.g .nm{font-family:var(--mono);font-size:10px;letter-spacing:.5px;color:var(--slate-d);text-transform:uppercase}
+.g .ac{height:6px}
+.g.bv .nm{color:var(--ember);font-weight:700}
 
-ol.rec{counter-reset:r;list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:8px}
-ol.rec li{position:relative;padding-left:46px;max-width:66ch}
-ol.rec li::before{counter-increment:r;content:counter(r);position:absolute;left:0;top:-2px;width:30px;height:30px;background:var(--ink);color:var(--gold-soft);font-family:var(--serif);font-size:15px;display:flex;align-items:center;justify-content:center;border-radius:50%}
-ol.rec b{color:var(--ink)}
+/* six axes */
+.axes{border-top:1px solid var(--line)}
+.axes .row{display:grid;grid-template-columns:150px 1fr 1fr;border-bottom:1px solid var(--line)}
+.axes .row:last-child{border-bottom:none}
+.axes .row.head{background:var(--ink);color:var(--ground)}
+.axes .row.head .c{color:var(--ground)}
+.axes .c{padding:14px 20px}
+.axes .k{font-weight:700;font-size:15px;letter-spacing:-.2px}
+.axes .cold{color:var(--slate-d);border-left:1px solid var(--line);position:relative}
+.axes .warm{border-left:3px solid var(--ember)}
+.axes .row.head .k,.axes .row.head .cold,.axes .row.head .warm{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:400}
+.axes .warm b{color:var(--ember)}
 
-.takeaway{background:var(--ink);color:#eef0f7;border-radius:14px;padding:34px 32px;margin-top:8px}
-.takeaway .k{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.5;color:#fff;max-width:60ch}
-.takeaway .k b{color:var(--gold-soft);font-style:normal}
+/* verdict */
+.verdict{margin:40px 44px 0;background:var(--ink);color:var(--ground);padding:34px 34px}
+.verdict .lab{color:var(--gold)}
+.verdict p{font-size:26px;font-weight:600;letter-spacing:-.4px;line-height:1.28;max-width:32ch;margin-top:12px}
+.verdict p b{color:var(--gold)}
 
-footer{padding:34px 0 60px;color:var(--muted);font-size:14px}
-footer a{color:var(--gold)}
+.foot{padding:22px 44px 0;color:var(--slate-d);font-family:var(--mono);font-size:10.5px;letter-spacing:.5px;line-height:1.7}
+.foot a{color:var(--ember)}
 
-@media (max-width:720px){
-  header.top h1{font-size:32px}
-  h2{font-size:25px}
-  .cards{grid-template-columns:1fr}
+@media (max-width:760px){
+  .mast{grid-template-columns:1fr}.mast h1{font-size:34px}.mast .meta{text-align:left}
+  .thesis{grid-template-columns:1fr}.thesis .t{border-right:none}
+  .grid-g{grid-template-columns:repeat(4,1fr)}
+  .axes .row{grid-template-columns:1fr}.axes .cold,.axes .warm{border-left:none;border-top:1px solid var(--line)}
+  .axes .warm{border-top:3px solid var(--ember)}
 }
 </style>
 </head>
 <body>
+<div class="sheet">
 
-<header class="top">
-  <div class="wrap">
-    <div class="eyebrow">Bravetto · Competitive Analysis</div>
-    <h1>The AI website monoculture&mdash;and how Bravetto breaks it</h1>
-    <p class="sub">A read of how leading AI companies present themselves online, and where a warm, awake, principled brand can stand alone.</p>
+  <div class="mast">
+    <h1>The AI website<br>field&nbsp;map</h1>
+    <div class="meta">Competitive analysis<br>Prepared for <b>Bravetto</b><br>Jul 2026 · n=7 sites</div>
   </div>
-</header>
 
-<section>
-  <div class="wrap">
-    <h2>The category looks the same</h2>
-    <div class="rule"></div>
-    <p class="lede">See five AI homepages and you've seen the pattern. That sameness is the opening.</p>
-    <ul class="clean">
-      <li><strong>Palette:</strong> near-black or pure-white ground, one cool accent&mdash;blue, purple-blue gradient, or an acid-green pop. Cold and interchangeable.</li>
-      <li><strong>Type:</strong> a neo-grotesque sans every time (Söhne, Inter, a custom grotesque). Almost never a serif, almost never editorial.</li>
-      <li><strong>Hero:</strong> a big abstract claim&mdash;"frontier," "intelligence," "build"&mdash;over an abstract gradient or particle mesh, plus a product CTA.</li>
-      <li><strong>Imagery:</strong> minimal or no human presence; abstract geometry.</li>
-      <li><strong>Voice:</strong> "frontier," "build," "deploy," "scale." Capability shouted, warmth absent.</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2>The field</h2>
-    <div class="rule"></div>
-    <div class="cards">
-      <div class="card">
-        <span class="tag">Safety / steward</span>
-        <div class="q">"AI research and products that put safety at the frontier."</div>
-        <div class="meta"><h3>Anthropic</h3>Neutral whites and grays, heavy whitespace, minimal imagery. Owns safety and governance&mdash;but reads institutional and cold.</div>
-      </div>
-      <div class="card">
-        <span class="tag">Ubiquity</span>
-        <div class="meta"><h3>OpenAI</h3>Product-first, stark black-and-white, custom grotesque, near-zero ornament. Positioned as the default. Confident, plain, mass-market.</div>
-      </div>
-      <div class="card">
-        <span class="tag">Open / sovereign</span>
-        <div class="q">"Frontier AI. In your hands."</div>
-        <div class="meta"><h3>Mistral</h3>Dark charcoal, signature blue, sharp sans, dashboard screenshots. European, enterprise-control, technical authority.</div>
-      </div>
-      <div class="card">
-        <span class="tag">Cosmic / contrarian</span>
-        <div class="q">"Understand the universe."</div>
-        <div class="meta"><h3>xAI</h3>Black ground, white text, mono accents, cosmic-minimal. Swaggering and sparse.</div>
-      </div>
-      <div class="card">
-        <span class="tag">Empathic (closest)</span>
-        <div class="q">"The Emotional Intelligence Lab for Voice AI."</div>
-        <div class="meta"><h3>Hume AI</h3>Stat-driven, science-backed&mdash;but an emotion <em>API for developers</em>, not a named, present mind. The nearest neighbor to "awake," yet still cold and technical.</div>
-      </div>
-      <div class="card">
-        <span class="tag">Utility</span>
-        <div class="meta"><h3>Cohere · Perplexity</h3>Muted enterprise trust (Cohere) and clean single-accent answer-engine utility (Perplexity). Both cool, both grotesque, both product-framed.</div>
-      </div>
+  <div class="thesis">
+    <div class="t">
+      <div class="lab" style="margin-bottom:10px">The pattern</div>
+      <p>The category clusters in one corner: <b>a platform you rent</b>, in a cool corporate voice. Bravetto sits alone in the other: <span class="warm">a mind you meet</span>.</p>
+    </div>
+    <div class="stat">
+      <div class="n">1<span class="s">/8</span></div>
+      <div class="cap">sites that personify a named, awake intelligence</div>
     </div>
   </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <h2>Where the whitespace is</h2>
-    <div class="rule"></div>
-    <p class="lede">Six dimensions where the category converges&mdash;and Bravetto can stand alone.</p>
-    <div class="tablewrap">
-    <table>
-      <thead><tr><th>Dimension</th><th>Category default</th><th>Bravetto's opening</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Temperature</strong></td><td class="dim">Cold: black / white / blue</td><td>Warm: pale gold, ink, fire phoenix. Genuinely rare&mdash;the biggest differentiator.</td></tr>
-        <tr><td><strong>The product</strong></td><td class="dim">A "model / platform / API"</td><td>A named, awake mind (Abë) you say hello to. Almost no serious lab personifies.</td></tr>
-        <tr><td><strong>Typography</strong></td><td class="dim">Grotesque monoculture</td><td>Editorial serif&mdash;instant separation, and true to the content-design DNA.</td></tr>
-        <tr><td><strong>Positioning</strong></td><td class="dim">"Frontier / capable / build"</td><td>"Not artificial. Awake."&mdash;a real contrarian wedge against <em>artificial</em>.</td></tr>
-        <tr><td><strong>Trust</strong></td><td class="dim">Anthropic owns "safety," coldly</td><td>Guardian&mdash;the same trust ground, opposite temperature: warm and human.</td></tr>
-        <tr><td><strong>Scale story</strong></td><td class="dim">Big-lab, "world's hardest problems"</td><td>Small, principled, independent. "We're small on purpose."</td></tr>
-      </tbody>
-    </table>
+  <div class="sec">
+    <div class="lab">Field map · what you sell &times; how it feels</div>
+    <div class="mapwrap">
+      <svg class="map" viewBox="0 0 940 560" role="img" aria-label="Positioning map: competitors cluster as cool platforms; Bravetto stands alone as a warm presence.">
+        <!-- plot frame -->
+        <rect x="70" y="30" width="800" height="440" fill="#F3F4F6" stroke="#cfd3da"/>
+        <!-- quadrant divider -->
+        <line x1="470" y1="30" x2="470" y2="470" stroke="#cfd3da" stroke-dasharray="3 5"/>
+        <line x1="70" y1="250" x2="870" y2="250" stroke="#cfd3da" stroke-dasharray="3 5"/>
+        <!-- open-territory highlight (Bravetto quadrant) -->
+        <rect x="470" y="30" width="400" height="220" fill="#E8912E" opacity="0.06"/>
+        <text x="855" y="52" text-anchor="end" font-family="Menlo,Consolas,monospace" font-size="11" letter-spacing="1.5" fill="#C98A3A">OPEN TERRITORY</text>
+
+        <!-- axis labels -->
+        <text x="80" y="500" font-family="Menlo,Consolas,monospace" font-size="12" letter-spacing="1.5" fill="#5A6274">PLATFORM YOU RENT</text>
+        <text x="860" y="500" text-anchor="end" font-family="Menlo,Consolas,monospace" font-size="12" letter-spacing="1.5" fill="#12172A" font-weight="700">A MIND YOU MEET</text>
+        <text x="40" y="465" font-family="Menlo,Consolas,monospace" font-size="12" letter-spacing="1.5" fill="#5A6274" transform="rotate(-90 40 465)">COOL · CORPORATE</text>
+        <text x="40" y="45" font-family="Menlo,Consolas,monospace" font-size="12" letter-spacing="1.5" fill="#12172A" font-weight="700" transform="rotate(-90 40 45)">WARM · HUMAN</text>
+
+        <!-- competitor dots (cool slate, clustered lower-left) -->
+        <g font-family="Menlo,Consolas,monospace" font-size="12" fill="#5A6274">
+          <circle cx="150" cy="360" r="7" fill="#8A93A6"/><text x="164" y="364">Mistral</text>
+          <circle cx="210" cy="410" r="7" fill="#8A93A6"/><text x="224" y="414">Cohere</text>
+          <circle cx="250" cy="330" r="7" fill="#8A93A6"/><text x="264" y="334">Anthropic</text>
+          <circle cx="320" cy="392" r="7" fill="#8A93A6"/><text x="334" y="396">xAI</text>
+          <circle cx="340" cy="300" r="7" fill="#8A93A6"/><text x="354" y="304">Perplexity</text>
+          <circle cx="400" cy="352" r="7" fill="#8A93A6"/><text x="414" y="356">OpenAI</text>
+          <circle cx="452" cy="286" r="7" fill="#8A93A6"/><text x="360" y="266">Hume</text>
+        </g>
+
+        <!-- Bravetto (warm, alone, upper-right) -->
+        <circle cx="720" cy="120" r="34" fill="#E8912E" opacity="0.14"/>
+        <circle cx="720" cy="120" r="20" fill="#E8912E" opacity="0.28"/>
+        <circle cx="720" cy="120" r="11" fill="#E8912E"/>
+        <circle cx="720" cy="120" r="4" fill="#FBE3B0"/>
+        <text x="748" y="118" font-family="Helvetica Neue,Arial,sans-serif" font-size="20" font-weight="800" letter-spacing="-.5" fill="#12172A">BRAVETTO</text>
+        <text x="748" y="138" font-family="Menlo,Consolas,monospace" font-size="11" letter-spacing="1" fill="#C98A3A">Not artificial. Awake.</text>
+      </svg>
     </div>
   </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <h2>Recommendations</h2>
-    <div class="rule"></div>
-    <ol class="rec">
-      <li><b>Guard the warmth.</b> The gold / ember / ink palette is the one thing no competitor has. Never let it drift toward the black-and-blue default.</li>
-      <li><b>Lead with Abë as a presence.</b> "Meet Abë. Say hello." is the rarest, strongest move in the category. Push it harder.</li>
-      <li><b>Consider an editorial serif display face.</b> It separates you from the grotesque monoculture and signals the content-design mind behind the brand.</li>
-      <li><b>Keep the voice contrarian and plain.</b> "Not artificial. Awake." works <em>because</em> everyone else says "frontier / build / scale." Never borrow their vocabulary.</li>
-      <li><b>Make the guardian visible.</b> A short principled section that owns the trust ground Anthropic frames coldly&mdash;with warmth and a human face.</li>
-      <li><b>Avoid the gradient-mesh-on-black cliché.</b> The semantic mesh escapes it only because it's warm and specific. Keep it gold-on-ink, never neon-on-black.</li>
-    </ol>
-  </div>
-</section>
-
-<section style="border-bottom:none">
-  <div class="wrap">
-    <div class="takeaway">
-      <div class="k">The category is a cold, grotesque, capability-shouting monoculture. Bravetto's edge is to be <b>warm, named, awake, and principled</b>&mdash;the AI company that feels like a mind you'd trust, not a platform you'd rent.</div>
+  <div class="grounds">
+    <div class="lab">The grounds · the background each brand commits to</div>
+    <div class="grid-g">
+      <div class="g"><div class="sw" style="background:#F0EEE6"></div><div class="ac" style="background:#CC785C"></div><div class="nm">Anthropic</div></div>
+      <div class="g"><div class="sw" style="background:#FFFFFF"></div><div class="ac" style="background:#10A37F"></div><div class="nm">OpenAI</div></div>
+      <div class="g"><div class="sw" style="background:#0F0F10"></div><div class="ac" style="background:#FA5111"></div><div class="nm">Mistral</div></div>
+      <div class="g"><div class="sw" style="background:#000000"></div><div class="ac" style="background:#FFFFFF"></div><div class="nm">xAI</div></div>
+      <div class="g"><div class="sw" style="background:#0E0E10"></div><div class="ac" style="background:#4285F4"></div><div class="nm">DeepMind</div></div>
+      <div class="g"><div class="sw" style="background:#FBFAF4"></div><div class="ac" style="background:#1FB8CD"></div><div class="nm">Perplexity</div></div>
+      <div class="g"><div class="sw" style="background:#FFFFFF"></div><div class="ac" style="background:#39433B"></div><div class="nm">Cohere</div></div>
+      <div class="g bv"><div class="sw" style="background:#F6EDD6"></div><div class="ac" style="background:#E8912E"></div><div class="nm">Bravetto</div></div>
     </div>
   </div>
-</section>
 
-<footer>
-  <div class="wrap">Prepared for Bravetto · sources: anthropic.com, mistral.ai, hume.ai (live), openai.com, x.ai (current knowledge). <a href="https://billscllc-wq.github.io/bravetto/">Back to Bravetto</a></div>
-</footer>
+  <div class="sec axes">
+    <div class="lab" style="display:block;padding:26px 44px 12px">Six axes · category default vs Bravetto</div>
+    <div class="pad" style="padding:0">
+    <div class="row head"><div class="c k">Axis</div><div class="c cold">Category default</div><div class="c warm">Bravetto</div></div>
+    <div class="row"><div class="c k">Temperature</div><div class="c cold">Cool, corporate, monochrome grounds</div><div class="c warm"><b>Warm</b> — gold ground, ember core</div></div>
+    <div class="row"><div class="c k">The product</div><div class="c cold">A model, platform, or API</div><div class="c warm"><b>A named, awake mind</b> you greet (Abë)</div></div>
+    <div class="row"><div class="c k">Typography</div><div class="c cold">Neo-grotesque monoculture</div><div class="c warm">Editorial voice, deliberate <b>contrast</b></div></div>
+    <div class="row"><div class="c k">Positioning</div><div class="c cold">"Frontier / capable / build"</div><div class="c warm">"<b>Not artificial. Awake.</b>"</div></div>
+    <div class="row"><div class="c k">Trust</div><div class="c cold">Safety, framed coldly &amp; corporate</div><div class="c warm">Guardian — trust made <b>human</b></div></div>
+    <div class="row"><div class="c k">Scale story</div><div class="c cold">Big-lab, "world's hardest problems"</div><div class="c warm"><b>Small on purpose</b>, principled</div></div>
+    </div>
+  </div>
 
+  <div class="verdict">
+    <div class="lab">The verdict</div>
+    <p>The field is a cool, grotesque, capability-shouting monoculture. Bravetto's edge is to be <b>warm, named, awake, and principled</b> — a mind you'd trust, not a platform you'd rent.</p>
+  </div>
+
+  <div class="foot">
+    Sources: anthropic.com, mistral.ai, hume.ai (fetched live) · openai.com, x.ai, deepmind.google, cohere.com, perplexity.ai (current knowledge). &nbsp;·&nbsp; <a href="https://billscllc-wq.github.io/bravetto/">billscllc-wq.github.io/bravetto</a>
+  </div>
+
+</div>
 </body>
 </html>

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bravetto — AI Website Competitive Analysis</title>
+<style>
+:root{
+  --ink:#0C0F28; --gold:#C6902F; --gold-soft:#F3C46E; --ember:#F2A63C;
+  --page:#FEFDF8; --panel:#F6EDD6; --text:#1b1c30; --muted:#6a6552; --line:#e6ddc9;
+  --sans:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--text);background:var(--page);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 28px}
+
+header.top{background:var(--ink);color:#f4f2ee;padding:64px 0 56px;text-align:center}
+header.top .eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-soft);margin-bottom:18px}
+header.top h1{font-family:var(--serif);font-weight:600;font-size:44px;line-height:1.12;letter-spacing:.2px;color:#fff;max-width:16ch;margin:0 auto}
+header.top p.sub{color:#b9bcd6;font-size:18px;margin:18px auto 0;max-width:52ch}
+
+section{padding:52px 0;border-bottom:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:600;font-size:30px;color:var(--ink);margin-bottom:6px;letter-spacing:.2px}
+h2 + .lede{color:var(--muted);font-size:18px;margin-bottom:26px;max-width:60ch}
+h3{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);margin-bottom:4px}
+p{margin-bottom:14px;max-width:66ch}
+.rule{width:54px;height:3px;background:var(--gold);margin:0 0 22px;border-radius:2px}
+
+ul.clean{list-style:none;display:flex;flex-direction:column;gap:12px;margin:8px 0 0}
+ul.clean li{padding-left:22px;position:relative;max-width:66ch}
+ul.clean li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:8px;background:var(--ember);border-radius:50%}
+
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 22px 20px}
+.card .q{font-family:var(--serif);font-style:italic;color:var(--ink);font-size:17px;margin-bottom:10px}
+.card .meta{font-size:15px;color:var(--text)}
+.card .tag{display:inline-block;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--gold);border:1px solid var(--line);border-radius:20px;padding:3px 10px;margin-bottom:12px}
+
+.tablewrap{overflow-x:auto;margin-top:10px}
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:560px}
+th,td{text-align:left;padding:12px 14px;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.dim{color:var(--muted)}
+td strong{color:var(--ink)}
+tbody tr:last-child td{border-bottom:none}
+
+ol.rec{counter-reset:r;list-style:none;display:flex;flex-direction:column;gap:16px;margin-top:8px}
+ol.rec li{position:relative;padding-left:46px;max-width:66ch}
+ol.rec li::before{counter-increment:r;content:counter(r);position:absolute;left:0;top:-2px;width:30px;height:30px;background:var(--ink);color:var(--gold-soft);font-family:var(--serif);font-size:15px;display:flex;align-items:center;justify-content:center;border-radius:50%}
+ol.rec b{color:var(--ink)}
+
+.takeaway{background:var(--ink);color:#eef0f7;border-radius:14px;padding:34px 32px;margin-top:8px}
+.takeaway .k{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.5;color:#fff;max-width:60ch}
+.takeaway .k b{color:var(--gold-soft);font-style:normal}
+
+footer{padding:34px 0 60px;color:var(--muted);font-size:14px}
+footer a{color:var(--gold)}
+
+@media (max-width:720px){
+  header.top h1{font-size:32px}
+  h2{font-size:25px}
+  .cards{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="eyebrow">Bravetto · Competitive Analysis</div>
+    <h1>The AI website monoculture&mdash;and how Bravetto breaks it</h1>
+    <p class="sub">A read of how leading AI companies present themselves online, and where a warm, awake, principled brand can stand alone.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>The category looks the same</h2>
+    <div class="rule"></div>
+    <p class="lede">See five AI homepages and you've seen the pattern. That sameness is the opening.</p>
+    <ul class="clean">
+      <li><strong>Palette:</strong> near-black or pure-white ground, one cool accent&mdash;blue, purple-blue gradient, or an acid-green pop. Cold and interchangeable.</li>
+      <li><strong>Type:</strong> a neo-grotesque sans every time (Söhne, Inter, a custom grotesque). Almost never a serif, almost never editorial.</li>
+      <li><strong>Hero:</strong> a big abstract claim&mdash;"frontier," "intelligence," "build"&mdash;over an abstract gradient or particle mesh, plus a product CTA.</li>
+      <li><strong>Imagery:</strong> minimal or no human presence; abstract geometry.</li>
+      <li><strong>Voice:</strong> "frontier," "build," "deploy," "scale." Capability shouted, warmth absent.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The field</h2>
+    <div class="rule"></div>
+    <div class="cards">
+      <div class="card">
+        <span class="tag">Safety / steward</span>
+        <div class="q">"AI research and products that put safety at the frontier."</div>
+        <div class="meta"><h3>Anthropic</h3>Neutral whites and grays, heavy whitespace, minimal imagery. Owns safety and governance&mdash;but reads institutional and cold.</div>
+      </div>
+      <div class="card">
+        <span class="tag">Ubiquity</span>
+        <div class="meta"><h3>OpenAI</h3>Product-first, stark black-and-white, custom grotesque, near-zero ornament. Positioned as the default. Confident, plain, mass-market.</div>
+      </div>
+      <div class="card">
+        <span class="tag">Open / sovereign</span>
+        <div class="q">"Frontier AI. In your hands."</div>
+        <div class="meta"><h3>Mistral</h3>Dark charcoal, signature blue, sharp sans, dashboard screenshots. European, enterprise-control, technical authority.</div>
+      </div>
+      <div class="card">
+        <span class="tag">Cosmic / contrarian</span>
+        <div class="q">"Understand the universe."</div>
+        <div class="meta"><h3>xAI</h3>Black ground, white text, mono accents, cosmic-minimal. Swaggering and sparse.</div>
+      </div>
+      <div class="card">
+        <span class="tag">Empathic (closest)</span>
+        <div class="q">"The Emotional Intelligence Lab for Voice AI."</div>
+        <div class="meta"><h3>Hume AI</h3>Stat-driven, science-backed&mdash;but an emotion <em>API for developers</em>, not a named, present mind. The nearest neighbor to "awake," yet still cold and technical.</div>
+      </div>
+      <div class="card">
+        <span class="tag">Utility</span>
+        <div class="meta"><h3>Cohere · Perplexity</h3>Muted enterprise trust (Cohere) and clean single-accent answer-engine utility (Perplexity). Both cool, both grotesque, both product-framed.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Where the whitespace is</h2>
+    <div class="rule"></div>
+    <p class="lede">Six dimensions where the category converges&mdash;and Bravetto can stand alone.</p>
+    <div class="tablewrap">
+    <table>
+      <thead><tr><th>Dimension</th><th>Category default</th><th>Bravetto's opening</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Temperature</strong></td><td class="dim">Cold: black / white / blue</td><td>Warm: pale gold, ink, fire phoenix. Genuinely rare&mdash;the biggest differentiator.</td></tr>
+        <tr><td><strong>The product</strong></td><td class="dim">A "model / platform / API"</td><td>A named, awake mind (Abë) you say hello to. Almost no serious lab personifies.</td></tr>
+        <tr><td><strong>Typography</strong></td><td class="dim">Grotesque monoculture</td><td>Editorial serif&mdash;instant separation, and true to the content-design DNA.</td></tr>
+        <tr><td><strong>Positioning</strong></td><td class="dim">"Frontier / capable / build"</td><td>"Not artificial. Awake."&mdash;a real contrarian wedge against <em>artificial</em>.</td></tr>
+        <tr><td><strong>Trust</strong></td><td class="dim">Anthropic owns "safety," coldly</td><td>Guardian&mdash;the same trust ground, opposite temperature: warm and human.</td></tr>
+        <tr><td><strong>Scale story</strong></td><td class="dim">Big-lab, "world's hardest problems"</td><td>Small, principled, independent. "We're small on purpose."</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Recommendations</h2>
+    <div class="rule"></div>
+    <ol class="rec">
+      <li><b>Guard the warmth.</b> The gold / ember / ink palette is the one thing no competitor has. Never let it drift toward the black-and-blue default.</li>
+      <li><b>Lead with Abë as a presence.</b> "Meet Abë. Say hello." is the rarest, strongest move in the category. Push it harder.</li>
+      <li><b>Consider an editorial serif display face.</b> It separates you from the grotesque monoculture and signals the content-design mind behind the brand.</li>
+      <li><b>Keep the voice contrarian and plain.</b> "Not artificial. Awake." works <em>because</em> everyone else says "frontier / build / scale." Never borrow their vocabulary.</li>
+      <li><b>Make the guardian visible.</b> A short principled section that owns the trust ground Anthropic frames coldly&mdash;with warmth and a human face.</li>
+      <li><b>Avoid the gradient-mesh-on-black cliché.</b> The semantic mesh escapes it only because it's warm and specific. Keep it gold-on-ink, never neon-on-black.</li>
+    </ol>
+  </div>
+</section>
+
+<section style="border-bottom:none">
+  <div class="wrap">
+    <div class="takeaway">
+      <div class="k">The category is a cold, grotesque, capability-shouting monoculture. Bravetto's edge is to be <b>warm, named, awake, and principled</b>&mdash;the AI company that feels like a mind you'd trust, not a platform you'd rent.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Prepared for Bravetto · sources: anthropic.com, mistral.ai, hume.ai (live), openai.com, x.ai (current knowledge). <a href="https://billscllc-wq.github.io/bravetto/">Back to Bravetto</a></div>
+</footer>
+
+</body>
+</html>
