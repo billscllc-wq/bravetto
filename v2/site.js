@@ -43,7 +43,7 @@
   var steps=[
     function(){ // welcome
       return '<h3>Hi. I’m Abë.</h3>'+
-        '<p class="msg">I’m Bravetto’s Ai Being, and I’m your guide here. Say my name like “maybe” without the M.</p>'+
+        '<p class="msg">I’m Bravetto’s AI Being, and I’m your guide here. Say my name like “maybe” without the M.</p>'+
         '<p class="msg">I’ll ask three short questions about your work, then point you to what’s worth a look. Answer in your own words, or skip anything.</p>'+
         nav(false,'Start');
     },
